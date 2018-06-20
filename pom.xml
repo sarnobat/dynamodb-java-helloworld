@@ -7,12 +7,7 @@
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<properties>
-		<DYNAMODB_REGION>us-west-1</DYNAMODB_REGION>
-	</properties>
-
 	<dependencies>
-		<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-dynamodb -->
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk-dynamodb</artifactId>
@@ -25,7 +20,6 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.5.0</version>
 				<executions>
 					<execution>
 						<phase>install</phase>
@@ -36,13 +30,6 @@
 				</executions>
 				<configuration>
 					<mainClass>org.sample.aws.dynamodb.App</mainClass>
-					<systemProperties>
-						<systemProperty>
-							<key>DYNAMODB_REGION</key>
-							<value>${DYNAMODB_REGION}</value>
-						</systemProperty>
-					</systemProperties>
-					<cleanupDaemonThreads>false</cleanupDaemonThreads>
 				</configuration>
 			</plugin>
 		</plugins>
